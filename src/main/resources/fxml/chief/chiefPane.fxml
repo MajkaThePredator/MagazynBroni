@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.chief.ChiefPaneController">
+    <center>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="kontrolaMagazynuButton" mnemonicParsing="false" onAction="#armoryControlAction" text="Kontrola magazynu broni">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin></Button>
+                <Button fx:id="zmianaEwidencjiButton" mnemonicParsing="false" onAction="#recordChangeAction" text="zmiana Ewidencji">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin></Button>
+            <Button fx:id="uzytkownicyButton" layoutX="257.0" layoutY="190.0" mnemonicParsing="false" onAction="#usersAction" text="Lista podchorążych">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin></Button>
+            </children>
+        </VBox>
+    </center>
+    <bottom>
+        <Button fx:id="BackToMainMenuSzefButton" mnemonicParsing="false" onAction="#backToMainMenuAction" text="Cofnij" BorderPane.alignment="TOP_RIGHT">
+            <BorderPane.margin>
+                <Insets bottom="10.0" right="10.0" />
+            </BorderPane.margin>
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Button>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="zmianaEwidencjiPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.chief.RecordChangePaneController">
+   <bottom>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <children>
+            <StackPane fx:id="armamentStackPane" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label text="Model:" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <TextField fx:id="modelTextField" maxWidth="80.0" promptText="Model" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="5.0" right="10.0" top="25.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <Label text="Numer:" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="95.0" top="5.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <TextField fx:id="numberTextField" maxWidth="80.0" promptText="Numer" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="95.0" top="25.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <Label text="Stopień:" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="185.0" top="5.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <Label text="Imie:" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="275.0" top="5.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <TextField fx:id="nameTextField" maxWidth="80.0" promptText="Imie" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="275.0" top="25.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <Label text="Nazwisko" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="365.0" top="5.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <TextField fx:id="surnameTextField" maxWidth="80.0" promptText="Nazwisko" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="365.0" top="25.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <Label text="Pluton" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="455.0" top="5.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <TextField fx:id="platoonTextField" maxWidth="80.0" promptText="Pluton" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="455.0" top="25.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <Button fx:id="addButton" mnemonicParsing="false" onAction="#addArmamentData" text="Dodaj" StackPane.alignment="BOTTOM_RIGHT">
+                     <StackPane.margin>
+                        <Insets bottom="55.0" right="10.0" />
+                     </StackPane.margin>
+                  </Button>
+                  <Button fx:id="removeRowButton" mnemonicParsing="false" onAction="#deleteRow" text="Usun wiersz" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="800.0" top="25.0" />
+                     </StackPane.margin>
+                  </Button>
+                  <Button fx:id="backButtonInZmianaEwidencjiPane" mnemonicParsing="false" onAction="#backToChiefPaneAction" text="Cofnij" StackPane.alignment="BOTTOM_RIGHT">
+                     <StackPane.margin>
+                        <Insets bottom="10.0" right="10.0" />
+                     </StackPane.margin>
+                  </Button>
+                  <Button fx:id="editButton" mnemonicParsing="false" onAction="#editSelectedArmamentRow" text="Edytuj" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets bottom="10.0" left="800.0" top="70.0" />
+                     </StackPane.margin>
+                  </Button>
+                  <TextField fx:id="editModelTextField" maxWidth="80.0" promptText="Model" visible="false" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="5.0" right="10.0" top="55.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <TextField fx:id="editNumberTextField" maxWidth="80.0" promptText="Numer" visible="false" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="95.0" right="5.0" top="55.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <TextField fx:id="editNameTextField" maxWidth="80.0" promptText="Imie" visible="false" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="275.0" top="55.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <TextField fx:id="editSurnameTextField" maxWidth="80.0" promptText="Nazwisko" visible="false" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="365.0" top="55.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <TextField fx:id="editPlatoonTextField" maxWidth="80.0" promptText="Pluton" visible="false" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="455.0" top="55.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <Button fx:id="confirmEditButton" mnemonicParsing="false" onAction="#editArmamentRowAction" text="Zatwierdz" visible="false" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="800.0" top="70.0" />
+                     </StackPane.margin>
+                  </Button>
+                  <ComboBox fx:id="stateComboBox" prefHeight="30.0" prefWidth="102.0" promptText="Stan" visibleRowCount="2" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="550.0" top="25.0" />
+                     </StackPane.margin>
+                  </ComboBox>
+                  <Label fx:id="stanLabel" text="Stan" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="550.0" top="5.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <ComboBox fx:id="rankComboBox" prefHeight="30.0" prefWidth="78.0" promptText="Stopien" visibleRowCount="2" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="185.0" top="25.0" />
+                     </StackPane.margin>
+                  </ComboBox>
+                  <TextField fx:id="notesTextField" maxWidth="80.0" promptText="Uwagi" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="670.0" top="25.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <Label fx:id="stanLabel1" text="Uwagi" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="670.0" top="5.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <TextField fx:id="editNotesTextField" maxWidth="80.0" promptText="Uwagi" text="Brak" visible="false" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="670.0" top="55.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <ComboBox fx:id="editRankComboBox" prefHeight="30.0" prefWidth="78.0" promptText="Stopien" visible="false" visibleRowCount="2" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="185.0" top="60.0" />
+                     </StackPane.margin>
+                  </ComboBox>
+                  <ComboBox fx:id="editStateComboBox" prefHeight="30.0" prefWidth="102.0" promptText="Stan" visible="false" visibleRowCount="2" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="550.0" top="65.0" />
+                     </StackPane.margin>
+                  </ComboBox>
+               </children>
+            </StackPane>
+            <StackPane fx:id="EquipmentStackPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label text="Nazwa:" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <TextField fx:id="equipmentNameTextField" maxWidth="80.0" promptText="Nazwa" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="5.0" right="10.0" top="25.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <Label text="Ilosc:" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="95.0" top="5.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <TextField fx:id="amountTextField" maxWidth="80.0" promptText="Ilosc" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="95.0" top="25.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <Label text="Opis:" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="185.0" top="5.0" />
+                     </StackPane.margin>
+                  </Label>
+                  <TextField fx:id="descriptionTextField" maxWidth="80.0" promptText="Opis" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="185.0" top="25.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <Button fx:id="addEquipmentButton" mnemonicParsing="false" onAction="#addEquipmentData" text="Dodaj" StackPane.alignment="BOTTOM_RIGHT">
+                     <StackPane.margin>
+                        <Insets bottom="55.0" right="10.0" />
+                     </StackPane.margin>
+                  </Button>
+                  <Button fx:id="removeEquipmentRowButton" mnemonicParsing="false" onAction="#deleteEquipmentRow" text="Usun wiersz" StackPane.alignment="BOTTOM_RIGHT">
+                     <StackPane.margin>
+                        <Insets bottom="55.0" right="110.0" top="25.0" />
+                     </StackPane.margin>
+                  </Button>
+                  <Button fx:id="backButtonInZmianaEwidencjiPane1" mnemonicParsing="false" onAction="#backToChiefPaneAction" text="Cofnij" StackPane.alignment="BOTTOM_RIGHT">
+                     <StackPane.margin>
+                        <Insets bottom="10.0" right="10.0" />
+                     </StackPane.margin>
+                  </Button>
+                  <Button fx:id="editEquipmentButton" mnemonicParsing="false" onAction="#editSelectedEquipmentRow" text="Edytuj" StackPane.alignment="BOTTOM_RIGHT">
+                     <StackPane.margin>
+                        <Insets bottom="10.0" right="145.0" top="70.0" />
+                     </StackPane.margin>
+                  </Button>
+                  <TextField fx:id="editEqNameTextField" maxWidth="80.0" promptText="Model" visible="false" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="5.0" right="10.0" top="55.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <TextField fx:id="editAmountTextField" maxWidth="80.0" promptText="Numer" visible="false" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="95.0" right="5.0" top="55.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <TextField fx:id="editNoteTextField" maxWidth="80.0" promptText="Imie" visible="false" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="275.0" top="55.0" />
+                     </StackPane.margin>
+                  </TextField>
+                  <Button fx:id="confirmEquipmentButton" mnemonicParsing="false" onAction="#editEquipmentRowAction" text="Zatwierdz" visible="false" StackPane.alignment="TOP_LEFT">
+                     <StackPane.margin>
+                        <Insets left="800.0" top="70.0" />
+                     </StackPane.margin>
+                  </Button>
+               </children>
+            </StackPane>
+         </children>
+      </AnchorPane>
+   </bottom>
+   <center>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <children>
+            <ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="1000.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+               <content>
+                  <AnchorPane>
+                     <children>
+                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                              <AnchorPane>
+                                 <children>
+                                    <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Label text="Lista Uzbrojenia">
+                                             <VBox.margin>
+                                                <Insets left="10.0" top="5.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0">
+                                             <children>
+                                                <TableView fx:id="armamentTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" scaleShape="false" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Label text="Lista Wyposażenia">
+                                             <VBox.margin>
+                                                <Insets left="10.0" top="5.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0">
+                                             <children>
+                                                <TableView fx:id="equipmentTableView" maxHeight="1.7976931348623157E308" scaleShape="false" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+                                                   <padding>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </padding>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
